@@ -1,0 +1,12 @@
+worker:
+  kafka:
+    topic: shopping-cart-events
+    client:
+      metadata.broker.list: localhost:9092
+      group.id: shopping-cart-events-consumer
+      socket.keepalive.enable: true
+      enable.auto.commit: false
+      receive.message.max.bytes: 10000000
+    topics:
+      auto.offset.reset: beginning # from beginning
+      # auto.offset.reset: latest  # from top

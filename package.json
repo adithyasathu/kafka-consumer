@@ -1,0 +1,67 @@
+{
+  "name": "kafka-consumer",
+  "version": "1.0.0",
+  "description": "Consume shopping cart events from Kafka",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/del -f build && tsc",
+    "test": "./node_modules/.bin/del -f coverage && ./node_modules/.bin/nyc ./node_modules/.bin/mocha -r ts-node/register ./test/*.mocha.ts",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adithyasathu/kafka-consumer.git"
+  },
+  "author": "Adithya Sathu",
+  "license": "ISC",
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/**/consumer.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/config": "^0.0.32",
+    "@types/js-yaml": "^3.5.31",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.16",
+    "chai": "^3.5.0",
+    "codelyzer": "^4.5.0",
+    "del-cli": "^1.1.0",
+    "jshint": "^2.9.4",
+    "mocha": "^3.3.0",
+    "path": "^0.12.7",
+    "ts-node": "^3.0.4",
+    "tslint": "^4.5.1",
+    "typemoq": "^2.1.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "config": "^1.26.1",
+    "faker": "^4.1.0",
+    "inversify": "^4.1.0",
+    "js-yaml": "^3.12.0",
+    "moment": "^2.23.0",
+    "moment-timezone": "0.5.5",
+    "node-rdkafka": "^2.4.2",
+    "nyc": "^13.1.0",
+    "pm2": "^3.2.4",
+    "simple-node-logger": "^0.93.40",
+    "sinon": "^7.2.2"
+  }
+}

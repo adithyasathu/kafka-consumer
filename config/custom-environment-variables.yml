@@ -1,0 +1,8 @@
+worker:
+  kafka:
+    client:
+      metadata.broker.list: KAFKA_CONNECTION_STRING
+      group.id: KAFKA_CONSUMER_GROUP_ID
+      enable.auto.commit: KAFKA_AUTO_COMMIT
+      socket.keepalive.enable: KAFKA_SOCKET_KEEPALIVE
+      receive.message.max.bytes: KAFKA_MESSAGE_MAX_BYTES
